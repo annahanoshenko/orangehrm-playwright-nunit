@@ -1,0 +1,10 @@
+{
+  "baseUrl": "https://opensource-demo.orangehrmlive.com",
+  "username": "Admin",
+  "password": "admin123",
+  "headless": true,
+  "timeoutMs": 30000,
+  "expectTimeoutMs": 10000,
+  "slowMoMs": 0,
+  "tracesOnFailure": true
+}
