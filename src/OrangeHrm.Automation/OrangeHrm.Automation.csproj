@@ -7,11 +7,73 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Playwright" Version="1.57.0" />
+    <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net8.0\OrangeHrm.Automation.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net8.0\OrangeHrm.Automation.GlobalUsings.g.cs" />
   </ItemGroup>
 
-	<ItemGroup>
-		<None Include="Config\settings.json" CopyToOutputDirectory="Always" />
-	</ItemGroup>
-	
+  <ItemGroup>
+    <Content Include="obj\Debug\net8.0\OrangeHrm.Automation.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net8.0\OrangeHrm.Automation.sourcelink.json" />
+    <Content Include="obj\OrangeHrm.Automation.csproj.nuget.dgspec.json" />
+    <Content Include="obj\project.assets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Playwright" Version="1.57.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+  <None Update="Config\settings.json" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="bin\Debug\net8.0\.playwright\node\win32_x64\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\bin\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\client\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\cli\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\generated\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\protocol\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\remote\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\android\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\bidi\third_party\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\chromium\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\codegen\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\dispatchers\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\electron\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\firefox\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\har\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\recorder\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\registry\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\trace\recorder\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\trace\test\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\trace\viewer\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\utils\image_tools\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\server\webkit\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\third_party\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\utilsBundleImpl\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\utils\isomorphic\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\vite\htmlReport\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\vite\recorder\assets\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\lib\vite\traceViewer\assets\" />
+    <Folder Include="bin\Debug\net8.0\.playwright\package\types\" />
+    <Folder Include="Features\" />
+    <Folder Include="obj\Debug\net8.0\refint\" />
+    <Folder Include="obj\Debug\net8.0\ref\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Steps\" />
+    <Folder Include="TestData\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="obj\Debug\net8.0\OrangeHrm.Automation.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net8.0\OrangeHrm.Automation.assets.cache" />
+    <None Include="obj\Debug\net8.0\OrangeHrm.Automation.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net8.0\OrangeHrm.Automation.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net8.0\OrangeHrm.Automation.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\OrangeHrm.Automation.csproj.nuget.g.props" />
+    <None Include="obj\OrangeHrm.Automation.csproj.nuget.g.targets" />
+    <None Include="obj\project.nuget.cache" />
+  </ItemGroup>
+
 </Project>

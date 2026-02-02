@@ -1,6 +1,9 @@
 using Allure.Net.Commons;
 using Microsoft.Playwright;
 using NUnit.Framework;
+using NUnit.Framework;
+using Microsoft.Playwright;
+
 
 namespace OrangeHrm.Automation.Framework;
 
@@ -16,6 +19,7 @@ public abstract class TestBase
     public async Task SetUp()
     {
         Settings = Settings.Load();
+        
         Playwright = await
             Microsoft.Playwright.Playwright.CreateAsync();
         Browser = await DriverFactory.LaunchAsync(Playwright, Settings);
@@ -24,7 +28,7 @@ public abstract class TestBase
             BaseURL = Settings.BaseUrl
         });
 
-        Context.SetDefaultTimeOut(Settings.TimeoutMs);
+        Context.SetDefaultTimeout(Settings.TimeoutMs);
         Context.SetDefaultNavigationTimeout(Settings.TimeoutMs);
 
         if (Settings.TracesOnFailure)
@@ -37,36 +41,41 @@ public abstract class TestBase
             });
         }
 
-        Page = await.Context.NewPageAsync();   
+        Page = await Context.NewPageAsync();   
     }
 
     [TearDown]
     public async Task TearDown()
     {
         var test = TestContext.CurrentContext.Test;
-        var failed = TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Failed;
+        var failed = TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed;
 
         if (failed)
         {
-            Directory.CreateDirectory("artifacts");
-            var safeName = 
-                $"{test.Name}_{DateTime.UTCnOW:YYYYMMDD_HHMMSS}";
-            var sceenshotPath = sceenshotPath.Combine("artifacts", $"{safeName}.png");
-            await Page.ScreenshotAsync(new PageScreenshotOptions { Path = sceenshotPath, FullPage = true });
+            var screenshotPath = Path.Combine("artifacts", $"{safeName}.png");
+            await Page.ScreenshotAsync(new PageScreenshotOptions
+            {
+                Path = screenshotPath,
+                FullPage = true
+            });
+
             AllureApi.AddAttachment("screenshot", "image/png", screenshotPath);
 
             if (Settings.TraceOnFailure)
             {
                 var tracePath = Path.Combine("artifacts", $"{safeName}-trace.zip");
                 await Context.Tracing.StopAsync(new TracingStopOptions { Path = tracePath });
-                AllurApi.AddAttachment("trace", "application/zip", tracePath);
+                AllureApi.AddAttachment("trace", "application/zip", tracePath);
             }
          }
         else
         {
-            if (Settings.TraceOnFailure)
+            if (Settings.TracesOnFailure)
             {
-                try(await Context.Tracing.StopAsync();
+                try 
+                {
+                    await Context.Tracing.StopAsync();
+                }
                 catch
                 {
                     /* Ignore errors */
@@ -74,18 +83,10 @@ public abstract class TestBase
             }
         }
 
-        await Context.CloseAsybc();
+        await Context.CloseAsync();
         await Browser.CloseAsync();
         Playwright.Dispose();
      }
 }
 
 
-
-
-
-
-
-
-
-}
