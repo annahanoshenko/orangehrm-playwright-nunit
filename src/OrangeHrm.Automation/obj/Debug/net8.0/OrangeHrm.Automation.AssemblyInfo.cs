@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OrangeHrm.Automation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67fc21d6e22e7c6460e0c10cf2f93d4111050306")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9ee5d2c71fb6c6a6c99f6ae5383b6bcc0a98f86")]
 [assembly: System.Reflection.AssemblyProductAttribute("OrangeHrm.Automation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OrangeHrm.Automation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
